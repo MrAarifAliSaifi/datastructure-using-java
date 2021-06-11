@@ -1,0 +1,50 @@
+package coding.com;
+import java.util.Scanner;
+class maxmin{
+    public void maxmin(int arr[], int k , int size, int option){
+        if (option == 1) {
+           int  max = arr[1];
+            for (int i = 1; i < k; i++) {
+                for (int j = i + 1; j < k; j++) {
+                    if (arr[i] < arr[j])
+                        max = arr[j];
+                }
+            }
+            System.out.println("the maximum" +" " +k+"th"+ " "+ "elements is:" + max);
+
+        }
+        else
+        {
+
+            if (option == 2) {
+               int min = arr[1];
+                for (int i = 1; i < k; i++) {
+                    for (int j = i + 1; j < k; j++) {
+                        if (arr[i] > arr[j]) {
+                            min = arr[j];
+                        }
+                    }
+                }
+                System.out.println("the minimum" + k + "elements is:" + min);
+
+            }
+        }
+    }
+}
+
+public class KthMaxAndMin{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Please enter the kth value!!");
+        int k=sc.nextInt();
+        System.out.println("Please enter the option which do you want find max or min value 1:for max and 2: for min!!");
+        int op=sc.nextInt();
+        int arr1[]={2,3,6,4,8,2};
+        int len= arr1.length;
+        maxmin mx=new maxmin();
+        mx.maxmin( arr1,k,len,op);
+
+
+
+    }
+}
