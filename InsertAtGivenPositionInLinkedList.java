@@ -47,6 +47,18 @@ public class InsertAtGivenPositionInLinkedList{
             n4.next=current;
         }
     }
+    public Node deleteFirst()
+    {
+        if(start==null)
+        {
+            return null;
+        }else{
+            Node temp=start;
+            start=start.next;
+            temp.next=null;//changing the start to another node
+            return temp;
+        }
+    }
     public static void main(String[] args) {
         InsertAtGivenPositionInLinkedList li=new InsertAtGivenPositionInLinkedList();
         li.start=new Node(123);
@@ -60,6 +72,7 @@ public class InsertAtGivenPositionInLinkedList{
         li.display();
         System.out.println("After inserting !!");
         li.insert(30,3);
+        li.deleteFirst();
         li.display();
     }
 }
