@@ -45,6 +45,16 @@ public class DoublyLinkedList {
 
             }
         }
+        void insertAtBeining(int value)//inserting the node at the beigining of the liked list
+        {
+
+            Node n3=new Node(value);
+            n3.next=head;
+            head.pre=n3;
+            head=n3;
+            size++;
+        }
+
     public static void main(String[] args) {
         DoublyLinkedList li=new DoublyLinkedList();
         head=new Node(12);
@@ -53,6 +63,7 @@ public class DoublyLinkedList {
          head.next=n1;
          n1.pre=head;
          n1.next=n2;
+         li.insertAtBeining(15);
         li.display();
     }
 
